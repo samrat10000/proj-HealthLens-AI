@@ -1,0 +1,41 @@
+﻿Patient ID,Age (years),Sex,Chest pain type,Exercise-induced angina,Resting blood pressure (mmHg),Serum cholesterol (mg/dL),Fasting blood sugar > 120 mg/dL,Max heart rate achieved (bpm),ST depression (oldpeak) (mm),ST segment slope,Resting ECG,Major vessels (fluoroscopy),Thalassemia (thallium scan),Actual diagnosis
+H-001,55.0,Female,Atypical angina,No,130.0,394.0,No,150.0,0.0,,Left ventricular hypertrophy,,,No heart disease
+H-002,45.0,Male,Typical angina,No,110.0,264.0,No,132.0,1.2,Flat,Normal,0,Reversible defect,Heart disease present
+H-003,46.0,Male,Atypical angina,Yes,140.0,275.0,No,165.0,0.0,,Normal,,,No heart disease
+H-004,58.0,Male,Asymptomatic,No,115.0,,,138.0,0.5,Upsloping,Normal,,,Heart disease present
+H-005,66.0,Male,Asymptomatic,Yes,112.0,212.0,No,132.0,0.1,Upsloping,Left ventricular hypertrophy,1,Normal,Heart disease present
+H-006,63.0,Male,Asymptomatic,No,126.0,,No,120.0,1.5,Downsloping,ST-T wave abnormality,,,No heart disease
+H-007,65.0,Male,Asymptomatic,Yes,170.0,263.0,Yes,112.0,2.0,Flat,Normal,,,Heart disease present
+H-008,49.0,Male,Typical angina,No,130.0,,No,145.0,3.0,Flat,ST-T wave abnormality,,,Heart disease present
+H-009,31.0,Female,Atypical angina,No,100.0,219.0,No,150.0,0.0,,ST-T wave abnormality,,,No heart disease
+H-010,33.0,Male,Non-anginal pain,No,120.0,298.0,No,185.0,0.0,,Normal,,,No heart disease
+H-011,70.0,Male,Asymptomatic,Yes,145.0,174.0,No,125.0,2.6,Downsloping,Normal,0,Reversible defect,Heart disease present
+H-012,61.0,Male,Non-anginal pain,Yes,120.0,,No,80.0,0.0,Flat,Normal,,,Heart disease present
+H-013,55.0,Male,Asymptomatic,No,116.0,186.0,Yes,102.0,0.0,,ST-T wave abnormality,,,Heart disease present
+H-014,52.0,Male,Asymptomatic,Yes,135.0,,,128.0,2.0,Flat,Normal,,Reversible defect,Heart disease present
+H-015,61.0,Male,Asymptomatic,Yes,120.0,282.0,No,135.0,4.0,Downsloping,ST-T wave abnormality,,Fixed defect,Heart disease present
+H-016,44.0,Female,Non-anginal pain,No,108.0,141.0,No,175.0,0.6,Flat,Normal,0,Normal,No heart disease
+H-017,39.0,Male,Atypical angina,Yes,120.0,200.0,No,160.0,1.0,Flat,Normal,,,No heart disease
+H-018,42.0,Male,Non-anginal pain,No,134.0,240.0,,160.0,0.0,,Normal,,,No heart disease
+H-019,32.0,Male,Atypical angina,No,125.0,254.0,No,155.0,0.0,,Normal,,,No heart disease
+H-020,62.0,Female,Asymptomatic,No,140.0,268.0,No,160.0,3.6,Downsloping,Left ventricular hypertrophy,2,Normal,Heart disease present
+H-021,46.0,Male,Asymptomatic,No,100.0,,,133.0,-2.6,Flat,ST-T wave abnormality,,,Heart disease present
+H-022,35.0,Male,Atypical angina,No,120.0,308.0,No,180.0,0.0,,Left ventricular hypertrophy,,,No heart disease
+H-023,64.0,Male,Typical angina,Yes,110.0,211.0,No,144.0,1.8,Flat,Left ventricular hypertrophy,0,Normal,No heart disease
+H-024,67.0,Male,Asymptomatic,Yes,160.0,384.0,Yes,130.0,0.0,Flat,ST-T wave abnormality,,,Heart disease present
+H-025,68.0,Male,Asymptomatic,No,145.0,,,136.0,1.8,Upsloping,Normal,,,Heart disease present
+H-026,43.0,Female,Non-anginal pain,No,150.0,,No,175.0,0.0,,Normal,,Normal,No heart disease
+H-027,53.0,Female,Asymptomatic,No,130.0,264.0,No,143.0,0.4,Flat,Left ventricular hypertrophy,0,Normal,No heart disease
+H-028,63.0,Female,Asymptomatic,No,150.0,407.0,No,154.0,4.0,Flat,Left ventricular hypertrophy,3,Reversible defect,Heart disease present
+H-029,51.0,Female,Asymptomatic,Yes,130.0,305.0,No,142.0,1.2,Flat,Normal,0,Reversible defect,Heart disease present
+H-030,67.0,Male,Non-anginal pain,No,152.0,212.0,No,150.0,0.8,Flat,Left ventricular hypertrophy,0,Reversible defect,Heart disease present
+H-031,54.0,Male,Atypical angina,No,160.0,305.0,No,175.0,0.0,,Normal,,,No heart disease
+H-032,54.0,Male,Atypical angina,No,110.0,208.0,No,142.0,0.0,,Normal,,,No heart disease
+H-033,54.0,Male,Asymptomatic,No,150.0,365.0,No,134.0,1.0,Upsloping,ST-T wave abnormality,,,No heart disease
+H-034,64.0,Male,Asymptomatic,Yes,144.0,,No,122.0,1.0,Flat,ST-T wave abnormality,,,Heart disease present
+H-035,63.0,Male,Non-anginal pain,Yes,130.0,,No,111.0,0.0,,ST-T wave abnormality,,,Heart disease present
+H-036,53.0,Male,Non-anginal pain,No,145.0,518.0,No,130.0,0.0,,Normal,,,Heart disease present
+H-037,58.0,Male,Non-anginal pain,Yes,105.0,240.0,No,154.0,0.6,Flat,Left ventricular hypertrophy,0,Reversible defect,No heart disease
+H-038,57.0,Female,Asymptomatic,No,128.0,303.0,No,159.0,0.0,Upsloping,Left ventricular hypertrophy,1,Normal,No heart disease
+H-039,53.0,Male,Asymptomatic,Yes,80.0,,,141.0,2.0,Downsloping,Normal,,,No heart disease
+H-040,58.0,Female,Non-anginal pain,No,120.0,340.0,No,172.0,0.0,Upsloping,Normal,0,Normal,No heart disease

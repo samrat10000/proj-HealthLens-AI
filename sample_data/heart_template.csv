@@ -1,0 +1,2 @@
+﻿Patient ID,Age (years),Sex,Chest pain type,Exercise-induced angina,Resting blood pressure (mmHg),Serum cholesterol (mg/dL),Fasting blood sugar > 120 mg/dL,Max heart rate achieved (bpm),ST depression (oldpeak) (mm),ST segment slope,Resting ECG,Major vessels (fluoroscopy),Thalassemia (thallium scan)
+P-001,54,Male,Non-anginal pain,No,130,230,No,150,1.0,Flat,Normal,0,Normal

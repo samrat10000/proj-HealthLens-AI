@@ -1,0 +1,2 @@
+﻿Patient ID,Age (years),Sex,Total bilirubin (mg/dL),Direct bilirubin (mg/dL),Alkaline phosphatase (IU/L),ALT (SGPT) (IU/L),AST (SGOT) (IU/L),Total protein (g/dL),Albumin (g/dL),Albumin/Globulin ratio
+P-001,45,Male,0.9,0.2,190,28,30,6.6,3.4,1.0
