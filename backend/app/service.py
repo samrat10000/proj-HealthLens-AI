@@ -17,7 +17,6 @@ ROOT = Path(__file__).resolve().parent.parent
 MODELS_DIR = ROOT / "models"
 MAX_UPLOAD_BYTES = 5 * 1024 * 1024
 
-
 class InputError(ValueError):
     """Bad user input (invalid values, unreadable file, ...). The message is shown to the user."""
 
