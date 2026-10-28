@@ -6,9 +6,6 @@ __pycache__/
 # Trained models are rebuilt by setup (they depend on the installed scikit-learn version)
 backend/models/
 
-# Node (frontend/dist IS committed so students don't need Node.js)
-frontend/node_modules/
-
 # OS / editor
 .DS_Store
 Thumbs.db

@@ -2,7 +2,7 @@
 $ErrorActionPreference = "Stop"
 $root = $PSScriptRoot
 
-function Step($n, $text) { Write-Host "`n[$n/4] $text" -ForegroundColor Cyan }
+function Step($n, $text) { Write-Host "`n[$n/3] $text" -ForegroundColor Cyan }
 function Fail($text) {
     Write-Host "`nERROR: $text" -ForegroundColor Red
     Write-Host "See the Troubleshooting section in README.md" -ForegroundColor Yellow
@@ -35,14 +35,5 @@ Step 3 "Training the AI models (about 1 minute)"
 & $py -m ml.train
 if ($LASTEXITCODE -ne 0) { Fail "Model training failed." }
 & $py -m ml.samples
-
-Step 4 "Preparing the website"
-if (Test-Path "$root\frontend\dist\index.html") {
-    Write-Host "Website is already built - nothing to do."
-} elseif (Get-Command npm -ErrorAction SilentlyContinue) {
-    Set-Location "$root\frontend"; npm install; npm run build
-} else {
-    Fail "frontend/dist is missing and Node.js is not installed. Install Node.js 20+ from https://nodejs.org and run setup again."
-}
 
 Write-Host "`nSetup complete! Now double-click start.bat (or run .\start.ps1)." -ForegroundColor Green

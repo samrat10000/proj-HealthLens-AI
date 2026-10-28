@@ -1,49 +1,37 @@
-"""Smoke tests for the API.  Run from backend/:  python -m pytest -q"""
-import json
-from pathlib import Path
+"""Smoke tests for the prediction service.  Run from backend/:  python -m pytest -q"""
+import pytest
 
-from fastapi.testclient import TestClient
-
-from app.main import app
-
-MODELS_DIR = Path(__file__).resolve().parent.parent / "models"
+from app import service
 
 
 def _sample(disease: str, label: str) -> dict:
-    meta = json.loads((MODELS_DIR / f"{disease}_meta.json").read_text())
-    return next(s["values"] for s in meta["samples"] if s["label"] == label)
+    return dict(next(s["values"] for s in service.meta(disease)["samples"] if s["label"] == label))
 
 
 def test_list_and_detail():
-    with TestClient(app) as c:
-        ds = c.get("/api/diseases").json()
-        assert {d["id"] for d in ds} == {"heart", "diabetes", "liver"}
-        detail = c.get("/api/diseases/heart").json()
-        assert detail["features"] and detail["meta"]["leaderboard"]
+    ds = service.disease_summaries()
+    assert {d["id"] for d in ds} == {"heart", "diabetes", "liver"}
+    assert service.meta("heart")["leaderboard"]
 
 
 def test_samples_rank_correctly():
-    with TestClient(app) as c:
-        for d in ["heart", "diabetes", "liver"]:
-            lo = c.post(f"/api/predict/{d}", json={"values": _sample(d, "Healthy profile")}).json()
-            hi = c.post(f"/api/predict/{d}", json={"values": _sample(d, "High-risk profile")}).json()
-            assert lo["probability"] < hi["probability"], d
-            assert hi["contributions"], d
+    for d in ["heart", "diabetes", "liver"]:
+        lo = service.predict(d, _sample(d, "Healthy profile"))
+        hi = service.predict(d, _sample(d, "High-risk profile"))
+        assert lo["probability"] < hi["probability"], d
+        assert hi["contributions"], d
 
 
 def test_optional_fields_are_imputed():
-    with TestClient(app) as c:
-        vals = _sample("heart", "High-risk profile")
-        vals.update(ca=None, thal=None, slope=None)
-        r = c.post("/api/predict/heart", json={"values": vals})
-        assert r.status_code == 200
-        assert len(r.json()["imputed"]) == 3
+    vals = _sample("heart", "High-risk profile")
+    vals.update(ca=None, thal=None, slope=None)
+    assert len(service.predict("heart", vals)["imputed"]) == 3
 
 
 def test_validation_errors():
-    with TestClient(app) as c:
-        vals = _sample("diabetes", "Healthy profile")
-        assert c.post("/api/predict/diabetes", json={"values": {**vals, "glucose": 999}}).status_code == 422
-        assert c.post("/api/predict/diabetes", json={"values": {**vals, "glucose": None}}).status_code == 422
-        assert c.post("/api/predict/diabetes", json={"values": {**vals, "bogus": 1}}).status_code == 422
-        assert c.post("/api/predict/kidney", json={"values": {}}).status_code == 404
+    vals = _sample("diabetes", "Healthy profile")
+    for bad in ({**vals, "glucose": 999}, {**vals, "glucose": None}, {**vals, "bogus": 1}):
+        with pytest.raises(service.InputError):
+            service.predict("diabetes", bad)
+    with pytest.raises(service.InputError):
+        service.predict("kidney", {})

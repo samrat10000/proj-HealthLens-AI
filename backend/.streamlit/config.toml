@@ -1,0 +1,10 @@
+[theme]
+primaryColor = "#0d9488"
+
+[server]
+headless = true
+port = 8501
+maxUploadSize = 5
+
+[browser]
+gatherUsageStats = false
